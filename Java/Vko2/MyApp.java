@@ -1,13 +1,22 @@
 public class MyApp {
 
     //Kaikki luodaan javalla new:llä, ei deleteä.
+    
     public static void main(String args[]) {
-        System.out.println("Hello World");
-        Opiskelija kalle = new Opiskelija("Kalle", "21314");
-        kalle.setOpintopisteet(23);
+        //Luodaan opiskelija olio kalle
+        Opiskelija kalle = new Opiskelija("Kalle", "21314", 120);
+        //Tulostetaan kallen tiedot
+        kalle.tulostaTiedot();
 
-        Harjoittelija maija = new Harjoittelija("Maija", "23232", "Vincit", 2000);
+        //Luodaan harjoittelija olio maija, joka perii luokan Opiskelija ominaisuudet
+        Harjoittelija maija = new Harjoittelija("Maija", "23232", 180, "Vincit", 2000);
+        //Tulostetaan Maijan tiedot.
         maija.tulostaTiedot();
+
+        Opiskelija jake = new Harjoittelija("Jake", "13442", 120, "CGI", 1000);
+        //Tulostetaan Maijan tiedot.
+        jake.tulostaTiedot();
+    
     }
 
     //Javassa cpp:n const on final, mutta niitä ei käytetä yleensä rajapinnaassa (eli funktion parametreissä)

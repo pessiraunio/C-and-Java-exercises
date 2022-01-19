@@ -10,7 +10,7 @@ class opiskelija {
 public:
     //Rakenajat ja purkaja
     opiskelija();
-    opiskelija(const string& aNimi, const string& aOpiskelijanumero);
+    opiskelija(const string& aNimi, const string& aOpiskelijanumero, const int& aOpintopisteet);
     ~opiskelija(); //Purkaja merkillä ~ kutsutaan automaattisesti, kun olio vapautetaan
 
     //Metodit (API)
@@ -23,7 +23,7 @@ public:
     string getOpiskelijanumero() const;
     int getOpintopisteet() const;
 
-    void tulostaTiedot();
+    virtual void tulostaTiedot() const;
 
 //protected: tarkottaisi, että perivä luokka pääsee käsiksi sen alle luotuihin muuttujiin, ei suositeltaavaa.
 private:

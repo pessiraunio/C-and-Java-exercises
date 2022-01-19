@@ -11,8 +11,8 @@ opiskelija::opiskelija()
     cout << "Opiskelijan oletusrakentaja" << endl;
 }
 
-opiskelija::opiskelija(const std::string& aNimi,const std::string& aOpiskelijanumero)
-    : mNimi(aNimi), mOpiskelijanumero(aOpiskelijanumero), mOpintopisteet(0)
+opiskelija::opiskelija(const std::string& aNimi,const std::string& aOpiskelijanumero, const int& aOpintopisteet)
+    : mNimi(aNimi), mOpiskelijanumero(aOpiskelijanumero), mOpintopisteet(aOpintopisteet)
 {
     cout << "Opiskelijan 2 parametrinen rakentaja" << endl;  
 }
@@ -47,9 +47,10 @@ int opiskelija::getOpintopisteet() const{
     return mOpintopisteet;
 }
 
-void opiskelija::tulostaTiedot() 
+void opiskelija::tulostaTiedot() const
 {
     cout << "Nimi: " << mNimi << endl;
     cout << "Opiskelijanumero: " << mOpiskelijanumero << endl;
     cout << "Opintopisteet: " << mOpintopisteet << endl;
+    cout << endl << "**********************************" << endl;
 }

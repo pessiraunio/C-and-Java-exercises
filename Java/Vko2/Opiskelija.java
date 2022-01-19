@@ -10,15 +10,22 @@ public class Opiskelija {
         mOpintopisteet = 0;
     }
     //Kaikki olioparametrit ovat viitteitä
-    public Opiskelija(String aNimi, String aOpiskelijanumero) {
+    public Opiskelija(String aNimi, String aOpiskelijanumero, int aOpintopisteet) {
         mNimi = aNimi;
         mOpiskelijanumero = aOpiskelijanumero;
+        mOpintopisteet = aOpintopisteet;
+
+        System.out.println("Opiskelijan "+ mNimi + " 3 parametrinen rakentaja");
     }
+
     public void setNimi(String aNimi) {
         mNimi = aNimi;
     }
     public void setOpiskelijanumero(String aOpiskelijanumero) {
         mOpiskelijanumero = aOpiskelijanumero;
+    }
+    public void setOpintopisteet(int aOpintopisteet) {
+        mOpintopisteet = aOpintopisteet;
     }
     public String getNimi() {
         return mNimi;
@@ -28,10 +35,6 @@ public class Opiskelija {
     }
     public int getOpintopisteet() {
         return mOpintopisteet;
-    }
-    public void setOpintopisteet(int aOpintopisteet) {
-
-        mOpintopisteet = aOpintopisteet;
     }
 
     public void tulostaTiedot() {
