@@ -24,7 +24,6 @@ public class Harjoittelija extends Opiskelija {
         return mPalkka;
     }
 
-    // Todo: setterit ja getterit harjoittelijan tiedoilla.
     public void tulostaTiedot() {
         System.out.println("Nimi: " + getNimi());
         System.out.println("Opintopisteet: " + getOpintopisteet());

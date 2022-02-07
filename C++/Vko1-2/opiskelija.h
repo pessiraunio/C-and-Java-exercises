@@ -23,6 +23,7 @@ public:
     string getOpiskelijanumero() const;
     int getOpintopisteet() const;
 
+    //Virtual -avainsana tuo dynaamisen sidonnan eli ajonaikaisesti katsontaan, löytyykö aliluoikalta toteutus
     virtual void tulostaTiedot() const;
 
 //protected: tarkottaisi, että perivä luokka pääsee käsiksi sen alle luotuihin muuttujiin, ei suositeltaavaa.

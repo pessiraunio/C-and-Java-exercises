@@ -1,6 +1,8 @@
 public class MyApp {
 
     //Kaikki luodaan javalla new:llä, ei deleteä.
+
+    /*settings.json pitää lisätä vain se kansio mistä haluaa koodia ajaa että build toimii!*/
     
     public static void main(String args[]) {
         //Luodaan opiskelija olio kalle
