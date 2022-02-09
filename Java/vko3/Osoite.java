@@ -34,7 +34,7 @@ public class Osoite {
     
     public void tulostaTiedot() {
         System.out.println("Osoitetiedot:");
-        System.out.println(getKatuosoite());
-        System.out.println(getPostinumero() + " " + getKunta());
+        System.out.println("Katuosoite: " + getKatuosoite());
+        System.out.println("Postinumero ja toimipaikka: " + getPostinumero() + " " + getKunta());
     }
 }

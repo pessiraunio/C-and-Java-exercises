@@ -1,3 +1,4 @@
+
 public class Henkilo{
     
     private String mNimi;
