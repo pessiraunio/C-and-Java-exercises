@@ -2,14 +2,14 @@
 public class Henkilo{
     
     private String mNimi;
-    private int mIka;
+    private String mIka;
     private Osoite mOsoite;
 
-    public Henkilo ( String aNimi, int aIka) {
+    public Henkilo ( String aNimi, String aIka) {
         mNimi = aNimi;
         mIka = aIka;
     }
-    public Henkilo ( String aNimi, int aIka, Osoite aOsoite) {
+    public Henkilo ( String aNimi, String aIka, Osoite aOsoite) {
         mIka = aIka;
         mNimi = aNimi;
         mOsoite = aOsoite;
@@ -17,7 +17,7 @@ public class Henkilo{
     public void setNimi(String aNimi) {
         mNimi = aNimi;
     }
-    public void setIka(int aIka) {
+    public void setIka(String aIka) {
         mIka = aIka;
     }
     public void setOsoite(Osoite aOsoite) {
@@ -27,20 +27,19 @@ public class Henkilo{
     public String getNimi() {
         return mNimi;
     }
-    public int getIka() {
+    public String getIka() {
         return mIka;
     }
     public Osoite getOsoite() {
         return mOsoite;
     }
 
-    public void tulostaTiedot() {
-        //Tulosta hlön tiedot
-        System.out.println("Nimi: " + mNimi);
-        System.out.println("Ika: " + mIka);
+    public String tulostaTiedot() {
+        String h_tiedot = ("Nimi: " + mNimi + " Ika: " + mIka + " ");
 
         if (mOsoite != null) {
-            mOsoite.tulostaTiedot();
+            h_tiedot = (h_tiedot + mOsoite.tulostaTiedot());
         }
+        return h_tiedot;
     }
 }
