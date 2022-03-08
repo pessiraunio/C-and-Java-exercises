@@ -1,8 +1,11 @@
+
 public class Opiskelija {
     //Tietojäsenet alkuun
     private String mNimi;
     private String mOpiskelijanumero;
     private int mOpintopisteet;
+    // Kuuntelija- interface muuttujaan
+    private Kuuntelija mKuuntelija = null;
 
     public Opiskelija() {
         mNimi = "tuntematon";
@@ -18,13 +21,31 @@ public class Opiskelija {
         System.out.println("Opiskelijan "+ mNimi + " 3 parametrinen rakentaja");
     }
 
+    //Asetetaan annettu kuuntelija luokan kuuntelijamuuttujaan
+    public void setKuuntelija(Kuuntelija aKuuntelija) {
+        mKuuntelija = aKuuntelija;
+    }
+
     public void setNimi(String aNimi) {
+        if (aNimi != mNimi) { //Jos tiedot ovat muuttuneet..
+            mNimi = aNimi;
+            //Kutsutaan listenerClass luokan toteutusta metodista
+            mKuuntelija.tiedotMuuttuneet(mNimi);
+        }
         mNimi = aNimi;
     }
     public void setOpiskelijanumero(String aOpiskelijanumero) {
+        if (aOpiskelijanumero != mOpiskelijanumero) {
+            mOpiskelijanumero = aOpiskelijanumero;
+            mKuuntelija.tiedotMuuttuneet(mOpiskelijanumero);
+        }
         mOpiskelijanumero = aOpiskelijanumero;
     }
     public void setOpintopisteet(int aOpintopisteet) {
+        if (aOpintopisteet != mOpintopisteet) {
+            mOpintopisteet = aOpintopisteet;
+            mKuuntelija.opMuuttuneet(mOpintopisteet);
+        }
         mOpintopisteet = aOpintopisteet;
     }
     public String getNimi() {

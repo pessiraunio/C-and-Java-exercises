@@ -1,11 +1,6 @@
-import java.awt.Font;
-
-import javax.sound.midi.MidiChannel;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.security.PublicKey;
-import java.util.Properties;
 import java.awt.event.ActionEvent;
 
 public class Kayttoliittyma {
@@ -36,7 +31,6 @@ public class Kayttoliittyma {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Tietojenhallinta.lisaaHenkilo();
-                prompt.setText("Henkilö lisätty!");
                 mainWindow.setVisible(true);
             }
         });

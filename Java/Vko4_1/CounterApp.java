@@ -5,19 +5,14 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-
 public class CounterApp {
 
     //tähä static arraylist
     static int counter = 0;
     public static void main(String args[]) {
-
-
         JFrame mainWindow = new JFrame("Counter app");
         mainWindow.setSize(400, 400);
-
         mainWindow.setLayout(new GridLayout(10, 1));
-
 
         JLabel counterLabel = new JLabel("" + counter, SwingConstants.CENTER);
         counterLabel.setFont(new Font("Arial", Font.BOLD, 25));
@@ -29,7 +24,6 @@ public class CounterApp {
         mainWindow.getContentPane().add(counterLabel);
         mainWindow.getContentPane().add(incrementButton);
         mainWindow.getContentPane().add(decrementButton);
-
 
         //Lisätään tapahtumankäsittelijä
         incrementButton.addActionListener( new ActionListener() {
@@ -49,8 +43,13 @@ public class CounterApp {
         });
 
         mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         mainWindow.setVisible(true);
 
+        incrementButton.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Button cliked!");
+                
+            }});
     }
 }

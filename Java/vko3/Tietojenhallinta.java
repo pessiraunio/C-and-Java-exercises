@@ -1,8 +1,5 @@
 import java.util.ArrayList;
-import java.util.Scanner;
-
 import javax.swing.JFrame;
-
 public class Tietojenhallinta extends Kayttoliittyma {
 
     private static String mNimi;
@@ -11,7 +8,6 @@ public class Tietojenhallinta extends Kayttoliittyma {
     private static String mPostinumero;
     private static String mKunta;
     private static ArrayList<Henkilo> henkilot = new ArrayList<Henkilo>();
-    private static Scanner sc = new Scanner(System.in);
 
     public Tietojenhallinta(String aNimi, String aIka, String aKatu, String aPostinumero, String aKunta) {
         mNimi = aKatu;
@@ -21,8 +17,6 @@ public class Tietojenhallinta extends Kayttoliittyma {
         mKunta = aKunta;
     }
     
-    
-    
     public static void lisaaHenkilo() {
         
         mNimi = mNimi_f.getText();
@@ -30,10 +24,9 @@ public class Tietojenhallinta extends Kayttoliittyma {
         mKatu = mOsoite_f.getText();
         mPostinumero = mPostinumero_f.getText();
         mKunta = mKunta_f.getText();
-            
+    
         henkilot.add(new Henkilo(mNimi, mIka,(new Osoite(mKatu,mPostinumero,mKunta))));
-
-        System.out.println("Henkilö " + mNimi + " lisätty!");
+        prompt.setText("Henkilö " + mNimi + " lisätty!");
     }
 
     public static void tulostaHenkilot() {
@@ -45,7 +38,6 @@ public class Tietojenhallinta extends Kayttoliittyma {
             mTulostus_a.setText(h.tulostaTiedot());
         }
     }
-
     public static void poistaHenkilo() {
         if (henkilot.size() == 0) {
             prompt.setText("Listassa ei ole vielä henkilöitä");
