@@ -7,8 +7,29 @@ using std::cout;
 
 //to compile: g++ opiskelija.cpp main.cpp Harjoittelija.cpp -o main
 
+//staattisen muuttujan alustus
+int opiskelija::mHolkLkm = 0;
+
 //Prosessin suoritus alkaa main() -funktiosta
 int main() {
+
+    //Tulostetaan heti alkun opikselijoiden lukumäärä ennen ensimmäisen opiskelijan luontia
+    cout << "Opiskelijoita " << opiskelija::getHloLkm() << endl;
+
+    if (true) {
+         opiskelija olli ("Olli", "020020", 101);
+        cout << opiskelija::getHloLkm() << endl;
+        olli.tulostaTiedot();
+
+        } // Olli ja maija vapautetaan
+
+
+        cout << "Opiskelijoita " << opiskelija::getHloLkm() << endl;
+    /*
+    opiskelija olli ("Olli", "020020", 101);
+    cout << opiskelija::getHloLkm() << endl;
+    olli.tulostaTiedot();
+    */
 
     //Luodaan opiskelija stackiin (automaattiseti vapautettava)
     // Sama asia voidaan kirjoittaa myös: opiskelija Kalle{"Kalle", "12345"}

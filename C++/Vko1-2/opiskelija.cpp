@@ -4,6 +4,10 @@
 using std::cout;
 using std::endl;
 
+// Staattisen tietojäsnen alustus globaalisti johonkin käännösyksikköön (.cpp) eli missä vaan käännösyksikössä
+// Voi ola myös main:issä
+int opiskelija::mHloLkm = 0;
+
 // konstruktorin perään : mNimi("tuntematon"), mOpiskelijanumero("000000"), mOpintopisteet(0)
 //Olisi vanha tapa alustaa 
 opiskelija::opiskelija()
@@ -15,11 +19,13 @@ opiskelija::opiskelija(const std::string& aNimi,const std::string& aOpiskelijanu
     : mNimi(aNimi), mOpiskelijanumero(aOpiskelijanumero), mOpintopisteet(aOpintopisteet)
 {
     cout << "Opiskelijan 2 parametrinen rakentaja" << endl;  
+    mHloLKm++;
 }
 
 opiskelija::~opiskelija()
 {
     cout << "Opiskelija " << mNimi << " vapautettu muistista." << endl;
+    mHloLkm--;
 }
 
 void opiskelija::setNimi(const std::string& aNimi)
@@ -53,4 +59,5 @@ void opiskelija::tulostaTiedot() const
     cout << "Opiskelijanumero: " << mOpiskelijanumero << endl;
     cout << "Opintopisteet: " << mOpintopisteet << endl;
     cout << endl << "**********************************" << endl;
+    cout << "Opiskelijaoita " << mHolkLkm << endl;
 }

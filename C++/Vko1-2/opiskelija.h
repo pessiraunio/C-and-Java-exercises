@@ -26,6 +26,15 @@ public:
     //Virtual -avainsana tuo dynaamisen sidonnan eli ajonaikaisesti katsontaan, löytyykö aliluoikalta toteutus
     virtual void tulostaTiedot() const;
 
+    static int getHloLkm();
+
+    // C++ toteutueksessa ei static- avainsanaa (vain esittelyssä)
+    int Opiskelija::getHloLkm() {
+
+        // Palauttaa opiskelijoiden lukumäärän
+        return mHlkom,
+    }
+
 //protected: tarkottaisi, että perivä luokka pääsee käsiksi sen alle luotuihin muuttujiin, ei suositeltaavaa.
 private:
     //Tietojäsenet (data, member variables, instance variables) privaatiksi, m alussa = tietojäsen eli memeber variable
@@ -33,5 +42,8 @@ private:
     //Jäsenet voidaan joko alustaa täällä tai cpp filessä, useimmin ne alustetaan cpp filessä tämä on vähän modernimpi tapa
     string mNimi = "tuntematon";
     string mOpiskelijanumero = "000000"; 
-    int mOpintopisteet = 0;    
+    int mOpintopisteet = 0;
+
+    //Staattinen tietojäsen opiskeljoiden lukumäärälle.
+    static int mHlkom;
 };

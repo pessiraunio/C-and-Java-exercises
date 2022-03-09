@@ -1,7 +1,12 @@
 #include <iostream>
 #include <vector>
+#include "MySingleton.h"
 
 using namespace std;
+
+MySingleton* singleton = MySingleton::getInstance();
+
+singleton->updateLuku(9)
 
 // Erilaisia funktioita, ja funktiotyyppejä
 void tervehdi() {
