@@ -1,6 +1,5 @@
 public class NumberSingleton {
 
-
     private int mNumber = 0;
 
     //Luodaan luokka tyyppinen instanssi, 

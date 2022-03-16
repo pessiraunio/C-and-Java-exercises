@@ -61,6 +61,6 @@ void opiskelija::tulostaTiedot() const
     cout << "Nimi: " << mNimi << endl;
     cout << "Opiskelijanumero: " << mOpiskelijanumero << endl;
     cout << "Opintopisteet: " << mOpintopisteet << endl;
-    cout << endl << "**********************************" << endl;
-    cout << "Opiskelijoita " << mOppilaidenLkm << endl;
+    //cout << endl << "**********************************" << endl;
+    //cout << "Opiskelijoita " << mOppilaidenLkm << endl;
 }

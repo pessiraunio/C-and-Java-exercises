@@ -8,6 +8,7 @@ using std::vector;
 
 class OpiskelijaSingleton {
 
+    // public alustukset metodeille.
     public:
         static OpiskelijaSingleton* getInstance();
         void lisaaOpiskelija(opiskelija* oppilas);
@@ -15,7 +16,7 @@ class OpiskelijaSingleton {
         void tulostaOpiskelijat();
         
 
-
+    // private alustukset rakentajille ja Luokan instanssille.
     private:
         OpiskelijaSingleton();
         ~OpiskelijaSingleton();
