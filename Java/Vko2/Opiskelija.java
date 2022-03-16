@@ -7,10 +7,14 @@ public class Opiskelija {
     // Kuuntelija- interface muuttujaan
     private Kuuntelija mKuuntelija = null;
 
+    private static int mOppilaidenLkm = 0; //Luodaan luokkamuuttuja, eli luokkakohtainen, ei luokasta luodun olion.
+
     public Opiskelija() {
         mNimi = "tuntematon";
         mOpiskelijanumero = "XXXXX";
         mOpintopisteet = 0;
+
+        mOppilaidenLkm++; //Kasvatetaan henkilöiden lukumäärää kutsuttaessa luokan rakentajaa
     }
     //Kaikki olioparametrit ovat viitteitä
     public Opiskelija(String aNimi, String aOpiskelijanumero, int aOpintopisteet) {
@@ -18,7 +22,9 @@ public class Opiskelija {
         mOpiskelijanumero = aOpiskelijanumero;
         mOpintopisteet = aOpintopisteet;
 
-        System.out.println("Opiskelijan "+ mNimi + " 3 parametrinen rakentaja");
+        mOppilaidenLkm++;
+
+        //System.out.println("Opiskelijan "+ mNimi + " 3 parametrinen rakentaja");
     }
 
     //Asetetaan annettu kuuntelija luokan kuuntelijamuuttujaan
@@ -62,5 +68,11 @@ public class Opiskelija {
         System.out.println("Nimi: " + mNimi);
         System.out.println("Opiskelijanumero: " + mOpiskelijanumero);
         System.out.println("Opintopisteet: " + mOpintopisteet);
+
+    }
+    // Oppilaiden määrän palauttava metodi.
+    public void oppilaidenMaara() {
+        System.out.println("Oppilaita luotu: " + mOppilaidenLkm);
+
     }
 }

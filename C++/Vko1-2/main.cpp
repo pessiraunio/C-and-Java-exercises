@@ -8,23 +8,30 @@ using std::cout;
 //to compile: g++ opiskelija.cpp main.cpp Harjoittelija.cpp -o main
 
 //staattisen muuttujan alustus
-int opiskelija::mHolkLkm = 0;
+int opiskelija::mOppilaidenLkm = 0;
 
 //Prosessin suoritus alkaa main() -funktiosta
 int main() {
 
     //Tulostetaan heti alkun opikselijoiden lukumäärä ennen ensimmäisen opiskelijan luontia
     cout << "Opiskelijoita " << opiskelija::getHloLkm() << endl;
-
+    opiskelija maija ("Maija", "023111", 211);
+    maija.tulostaTiedot();
     if (true) {
-         opiskelija olli ("Olli", "020020", 101);
-        cout << opiskelija::getHloLkm() << endl;
+        opiskelija olli ("Olli", "020020", 101);
         olli.tulostaTiedot();
+        opiskelija matti ("Matti", "01111", 150);
+        matti.tulostaTiedot();
+        cout << opiskelija::getHloLkm() << endl;
 
-        } // Olli ja maija vapautetaan
-
-
+        } // Olli ja matti vapautetaan
         cout << "Opiskelijoita " << opiskelija::getHloLkm() << endl;
+        opiskelija matti ("Matti", "01111", 150);
+        matti.tulostaTiedot();
+        cout << "Opiskelijoita " << opiskelija::getHloLkm() << endl;
+    
+    
+    
     /*
     opiskelija olli ("Olli", "020020", 101);
     cout << opiskelija::getHloLkm() << endl;
@@ -45,6 +52,9 @@ int main() {
     //Tässä tapauksessa main-lohkosta
     
 
+    /*--------
+
+
     //Luodaan opsikelija heapiin (Dynaamista muistinhallintaa)
     opiskelija* ville = new opiskelija("Ville", "33223", 160); //new tekee muistinvarauksen ja palauttaa muistiosoitteen
     ville->tulostaTiedot();
@@ -61,5 +71,12 @@ int main() {
     delete make;
 
     return 0;
+
+    ----------*/
+
+
+
 } //Kalle ja kaikki lohkon sisältä vapautetaan, eli kalle ja "a" vapautetaan stackista
     //Jos Kalle luotaisiin esimerkiksi if lause lohkossa se vapautettaisiin sen lohkon päätyttyä mutta näkyisi sen lohkos sisällä alle, esimerkiksi silmukoissa.
+
+

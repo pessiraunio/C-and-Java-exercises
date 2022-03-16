@@ -6,12 +6,22 @@ public class MyApp {
     
     public static void main(String args[]) {
 
-    
         //Luodaan opiskelija olio kalle
         Opiskelija kalle = new Opiskelija("Kalle", "21314", 120);
-        //Tulostetaan kallen tiedot
         kalle.tulostaTiedot();
+        // Tulostetaan oppilaiden lukumäärä kallen luonnin jälkeen
+        kalle.oppilaidenMaara();
 
+        Opiskelija mauri = new Opiskelija("Mauri", "33333", 190);
+        mauri.tulostaTiedot();
+        Opiskelija tero = new Opiskelija("Tero", "11111", 10);
+        tero.tulostaTiedot();
+        // Tulostetaan lopuksi luotujen oppilaiden määrä.
+        tero.oppilaidenMaara();
+        kalle.oppilaidenMaara();
+
+
+        /*
         //Luodaan kuuntelija kuuntelijaluokan toteutuksesta
         listenerClass listener = new listenerClass();
         kalle.setKuuntelija(listener);
@@ -20,7 +30,6 @@ public class MyApp {
 
         kalle.setOpintopisteet(123);
 
-        /*
         
         //Luodaan harjoittelija olio maija, joka perii luokan Opiskelija ominaisuudet
         Harjoittelija maija = new Harjoittelija("Maija", "23232", 180, "Vincit", 2000);
