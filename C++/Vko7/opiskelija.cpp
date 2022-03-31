@@ -16,14 +16,14 @@ opiskelija::opiskelija()
 }
 
 opiskelija::opiskelija(const std::string& aNimi,const std::string& aOpiskelijanumero, const int& aOpintopisteet)
-    : mNimi(aNimi), mOpiskelijanumero(aOpiskelijanumero), mOpintopisteet(aOpintopisteet), mOsoite(nullptr)
+    : mNimi{aNimi}, mOpiskelijanumero{aOpiskelijanumero}, mOpintopisteet{aOpintopisteet}, mOsoite{nullptr}
 {
     //cout << "Opiskelijan 2 parametrinen rakentaja" << endl;  
     mOppilaidenLkm++;
 }
 
 opiskelija::opiskelija(const std::string& aNimi,const std::string& aOpiskelijanumero, const int& aOpintopisteet, const osoite& aOsoite)
-    : mNimi(aNimi), mOpiskelijanumero(aOpiskelijanumero), mOpintopisteet(aOpintopisteet), mOsoite(new osoite(aOsoite))
+    : mNimi{aNimi}, mOpiskelijanumero{aOpiskelijanumero}, mOpintopisteet{aOpintopisteet}, mOsoite{new osoite{aOsoite}}
 {
     //cout << "Opiskelijan 2 parametrinen rakentaja" << endl;  
     mOppilaidenLkm++;
@@ -31,6 +31,7 @@ opiskelija::opiskelija(const std::string& aNimi,const std::string& aOpiskelijanu
 
 opiskelija::~opiskelija()
 {
+    cout << "Opiskelijan " << mNimi << " purkaja." << endl;
     if( mOsoite ) {
         delete mOsoite; // vapautettaan osoite purkajassa.
         mOsoite = nullptr; // nollataan pointeri varmuuden vuoksi

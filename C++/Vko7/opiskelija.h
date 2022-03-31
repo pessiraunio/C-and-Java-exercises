@@ -36,9 +36,9 @@ private:
     //Tietojäsenet (data, member variables, instance variables) privaatiksi, m alussa = tietojäsen eli memeber variable
 
     //Jäsenet voidaan joko alustaa täällä tai cpp filessä, useimmin ne alustetaan cpp filessä tämä on vähän modernimpi tapa
-    string mNimi = "tuntematon";
-    string mOpiskelijanumero = "000000"; 
-    int mOpintopisteet = 0;
+    string mNimi = {"tuntematon"};
+    string mOpiskelijanumero = {"000000"}; 
+    int mOpintopisteet = {};
 
     //Ei dynaaminen attribuutti (composition)
     //osoite mOsoite;

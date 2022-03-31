@@ -10,7 +10,7 @@ void perinteinenfoo( int x ) {
 
 void foo() {
     //Muistivuoto esimerkki
-    opiskelija* ville = new opiskelija("Ville", "123123", 123);
+    opiskelija* ville = new opiskelija{"Ville", "123123", 123};
     ville->tulostaTiedot();
 
     if (true) {
@@ -34,11 +34,17 @@ int main() {
     {
     int a = 10;
     int b = 20;
-    opiskelija* tero = new opiskelija("Tero", "12312", 123);
+    opiskelija* tero = new opiskelija{"Tero", "12312", 123};
 
     tero->tulostaTiedot();
 
-    delete tero; // vapautus ohjelmoijan vastuulla
+    delete tero; 
+    
+    opiskelija mauri = opiskelija{"Mauri", "12312", 230};
+
+    mauri.tulostaTiedot();
+
+    // vapautus ohjelmoijan vastuulla
     //Ilman deleteä tero olio jäisi heap muistiin kummittelemaan ilman osoitinta, jonka avulla siihen pääsisi käsiksi.
 
     } //stack on automamaattinen, blokin jälkeen a, b ja tero vapautetaan.
