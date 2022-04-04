@@ -40,16 +40,17 @@ void Cars::setManufacturingYear(const int &aManfacYear) {
 }
 
 string Cars::getMake() {
-    
+
     return mMake;
 }
 
 void Cars::getCarInfo() {
-
+    cout << "~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ " << endl;
     cout << "Make: " << mMake << endl;
     cout << "Model: " << mModel << endl;
     cout << "Engine Displacement: " << mEngineDispl << endl;
     cout << "Manufactured in: " << mManufacYear << endl;
+
 }
 
 

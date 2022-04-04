@@ -8,12 +8,14 @@ using namespace std;
 
 int main() {
 
+    //Variables for catching user input for UI.
     string Make;
     string Model;
     double EngineDisplacement;
     int ManufacturedIn;
     int userInput;
 
+    //Creating an instance of Datamanager for updating car list.
     Datamanager* datamanager = Datamanager::getInstance();
 
     while(1) {
@@ -34,10 +36,29 @@ int main() {
             cin >> Make;
             cout << "Malli: ";
             cin >> Model;
-            cout << "Moottorin tilavuus desimaalilukuna: ";
-            cin >> EngineDisplacement;
-            cout << "Valmistusvuosi: ";
-            cin >> ManufacturedIn;
+            while(1) {
+                cout << "Moottorin tilavuus desimaalilukuna: ";
+                if (cin >> EngineDisplacement) {
+                    break;
+                }
+                else {
+                    cout << "Syota arvo numeerisena." << endl;
+                    cin.clear();
+                    while (cin.get() != '\n') ;
+                }
+            }
+            while(1) {
+                cout << "Valmistusvuosi: ";
+                if (cin >> ManufacturedIn) {
+                    break;
+                }
+                else {
+                    cout << "Syota arvo numeerisena." << endl;
+                    cin.clear();
+                    while (cin.get() != '\n') ;
+                }
+            }
+            cin.clear();
 
             shared_ptr<Cars> car{new Cars{Make, Model, EngineDisplacement, ManufacturedIn}};
             datamanager->saveCar(car);
@@ -45,8 +66,6 @@ int main() {
         }
 
     }
-   
-
 
     return EXIT_SUCCESS;
 }
