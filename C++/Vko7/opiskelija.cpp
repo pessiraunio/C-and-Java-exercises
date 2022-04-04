@@ -31,7 +31,7 @@ opiskelija::opiskelija(const std::string& aNimi,const std::string& aOpiskelijanu
 
 opiskelija::~opiskelija()
 {
-    cout << "Opiskelijan " << mNimi << " purkaja." << endl;
+    cout << "Opiskelijan " << mNimi  << " purkaja." << endl;
     if( mOsoite ) {
         delete mOsoite; // vapautettaan osoite purkajassa.
         mOsoite = nullptr; // nollataan pointeri varmuuden vuoksi
