@@ -10,8 +10,8 @@ class Datamanager {
 public:
     static Datamanager* getInstance();
     void saveCar(shared_ptr<Cars> &aCarObject);
-    void getCars(string Make="N/A");
-
+    void getCars(string aMake="N/A");
+    void deleteByMake(string aMake="N/A");
 
 //Constructors privated for instance class
 private:

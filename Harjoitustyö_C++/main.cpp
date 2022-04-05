@@ -20,7 +20,7 @@ int main() {
 
     while(1) {
         cout << "- - - - - - - - - - - - - - \n";
-        cout << "Kaikki autot - 1\nHaku merkilla - 2\nLisaa auto - 3\n";
+        cout << "Kaikki autot - 1\nHaku merkilla - 2\nLisaa auto - 3\nPoista auto - 4\n";
         cin >> userInput;
 
         if (userInput == 1) {
@@ -47,6 +47,7 @@ int main() {
                     while (cin.get() != '\n') ;
                 }
             }
+            
             while(1) {
                 cout << "Valmistusvuosi: ";
                 if (cin >> ManufacturedIn) {
@@ -63,6 +64,11 @@ int main() {
             shared_ptr<Cars> car{new Cars{Make, Model, EngineDisplacement, ManufacturedIn}};
             datamanager->saveCar(car);
             cout << Make << " lisatty!" << endl;
+        }
+        else if(userInput == 4) {
+            cout << "Anna poistettavan auton merkki: ";
+            cin >> Make;
+            datamanager->deleteByMake(Make);
         }
 
     }
