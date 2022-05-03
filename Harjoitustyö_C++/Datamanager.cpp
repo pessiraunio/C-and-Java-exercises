@@ -43,7 +43,6 @@ void Datamanager::getCars(string aMake) {
     
     //Loop through the list and return all cars of find one by searching with the provided make.
     for (auto car : carObjects) {
-        cout << "car: " << car;
         if (aMake=="N/A") {
             car->getCarInfo();
         }
@@ -91,5 +90,71 @@ void Datamanager::deleteByMake(string aMake) {
             break;
         }
         index++;
+    }
+}
+
+void Datamanager::updateByMake(string aMake) {
+
+    int userInput;
+    string Make;
+    string Model;
+    double engineDispl;
+    int ManufacturedIn;
+
+    if(carObjects.size() == 0) {
+        cout << "Ei autoja listassa." << endl;
+    }
+    
+    //Loop through the list and return all cars of find one by searching with the provided make.
+    for (auto car : carObjects) { //if no search make is assigned, return car info.
+        if (aMake=="N/A") {
+            car->getCarInfo();
+        }
+        else if(aMake!="N/A" && car->getMake() == aMake) { //If car is found and make is assigned get car info
+            while(1) {
+                cout << "Paivitettava tieto" << endl;
+                cout << "Merkki - 1\nMalli - 2\nMoottorin tilavuus - 3\nValmistusvuosi - 4\n";
+                cin >> userInput;
+
+                if (userInput == 1) {
+                    cout << "Anna uusi merkki: ";
+                    cin >> Make;
+                    car->setMake(Make);
+                    cout << "Merkki paivitetty!" << endl;
+                    break;
+                }
+                else if (userInput == 2) {
+                    cout << "Anna uusi malli: ";
+                    cin >> Model;
+                    car->setModel(Model);
+                    cout << "Malli paivitetty!" << endl;
+                    break;
+
+                }
+                else if (userInput == 3) {
+                    cout << "Anna uusi tilavuus: ";
+                    cin >> engineDispl;
+                    car->setEngineDisplacement(engineDispl);
+                    cout << "Tilavuus paivitetty!" << endl;
+                    break;
+
+                }
+                else if (userInput == 4) {
+                    cout << "Anna uusi valmistusvuosi: ";
+                    cin >> ManufacturedIn;
+                    car->setManufacturingYear(ManufacturedIn);
+                    cout << "Valmistusvuosi paivitetty!" << endl;
+                    break;
+                }
+                else {
+                    cout << "***Syota numerovalinta***" << endl;
+                    cin.clear();
+                    while (cin.get() != '\n') ;
+                }
+            }
+        }
+        else if(aMake!=car->getMake() && car == carObjects.back()) {
+            cout << "Merkkia " << aMake << " ei ole listassa. " << endl;
+        }   
     }
 }

@@ -12,6 +12,7 @@ public:
     void saveCar(shared_ptr<Cars> &aCarObject);
     void getCars(string aMake="N/A");
     void deleteByMake(string aMake="N/A");
+    void updateByMake(string aMake="N/A");
 
 //Constructors privated for instance class
 private:

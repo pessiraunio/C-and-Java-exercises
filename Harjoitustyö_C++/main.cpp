@@ -20,9 +20,8 @@ int main() {
 
     while(1) {
         cout << "- - - - - - - - - - - - - - \n";
-        cout << "Kaikki autot - 1\nHaku merkilla - 2\nLisaa auto - 3\nPoista auto - 4\n";
+        cout << "Kaikki autot - 1\nHaku merkilla - 2\nLisaa auto - 3\nPoista auto - 4\nPaivita auton tiedot - 5\n";
         cin >> userInput;
-
         if (userInput == 1) {
             datamanager->getCars();
         }
@@ -69,6 +68,16 @@ int main() {
             cout << "Anna poistettavan auton merkki: ";
             cin >> Make;
             datamanager->deleteByMake(Make);
+        }
+        else if(userInput == 5) {
+            cout << "Anna paivitettavan auton merkki: ";
+            cin >> Make;
+            datamanager->updateByMake(Make);
+        }
+        else {
+            cout << "***Syota numerovalinta***" << endl;
+            cin.clear();
+            while (cin.get() != '\n') ;
         }
 
     }
