@@ -17,17 +17,14 @@ Datamanager* Datamanager::getInstance() {
     return instance;
 }
 
-
 Datamanager::Datamanager()
 {
     //Constructor
 }
-
 Datamanager::~Datamanager()
 {
     //Deconstructor
 }
-
 
 void Datamanager::saveCar(shared_ptr<Cars> &aCarObject)
 {
@@ -35,12 +32,9 @@ void Datamanager::saveCar(shared_ptr<Cars> &aCarObject)
 }
 
 void Datamanager::getCars(string aMake) {
-
-
     if(carObjects.size() == 0) {
         cout << "Ei autoja listassa." << endl;
     }
-    
     //Loop through the list and return all cars of find one by searching with the provided make.
     for (auto car : carObjects) {
         if (aMake=="N/A") {
@@ -66,11 +60,9 @@ void Datamanager::deleteByMake(string aMake) {
     catch (...) {
         cout << "Ei autoja listassa." << endl;
     }
-
     int index = 0;
     //Tracking car in carObjects by index
     for (auto car : carObjects) {
-        cout << "car: " << car;
         //if car is found & car list is more than 0
         if(car->getMake() == aMake && carObjects.size() > 0) {
             carObjects.erase(carObjects.begin() + index);

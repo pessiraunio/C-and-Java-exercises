@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 int main() {
 
     //Variables for catching user input for UI.
@@ -18,6 +17,7 @@ int main() {
     //Creating an instance of Datamanager for updating car list.
     Datamanager* datamanager = Datamanager::getInstance();
 
+    // Loop for user input
     while(1) {
         cout << "- - - - - - - - - - - - - - \n";
         cout << "Kaikki autot - 1\nHaku merkilla - 2\nLisaa auto - 3\nPoista auto - 4\nPaivita auton tiedot - 5\n";
