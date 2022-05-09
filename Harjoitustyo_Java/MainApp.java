@@ -1,4 +1,3 @@
-import java.net.ConnectException;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -6,6 +5,7 @@ public class MainApp {
 
     public static void main(String args[]) {
 
+        //Luodaan instanssi datan käsittelyä varten
         Manager instance = Manager.getInstance();
 
         int userInput;
@@ -20,7 +20,7 @@ public class MainApp {
         while(true) {
             System.out.println("1 - Kaikki autot\n2 - Lisaa auto\n3 - Poista auto\n4 - Hae merkilla\n5 - Muokkaa tietoja");
             
-            if(!scan.hasNextInt()) {
+            if(!scan.hasNextInt()) { //Tarkistetaan käyttäjän syöte
                 System.out.println("Kayta vain numeroita.");
                 break;
             }
@@ -37,7 +37,7 @@ public class MainApp {
                 System.out.print("Malli: ");
                 model = scan.nextLine();
                 System.out.print("Moottorin tilavuus: ");
-                if(!scan.hasNextDouble()) {
+                if(!scan.hasNextDouble()) {  
                     System.out.println("Kayta vain numeroita.");
                     break;
                 }

@@ -4,6 +4,7 @@ import java.util.Locale;
 
 public class Manager {
     
+    //Array list Car- olioita
     private ArrayList<Car> CarCatalog = new ArrayList<Car>();
 
     private static Manager instance;
@@ -19,7 +20,7 @@ public class Manager {
         //Constructor
     }
 
-    public void addCar(Car vehicle) {
+    public void addCar(Car vehicle) { //  Lisätään parametrina saatu olio listaan.
         CarCatalog.add(vehicle);
         System.out.println("-------------------");
         System.out.println("Auto " + vehicle.getMake() + " lisatty!\n");
@@ -27,7 +28,7 @@ public class Manager {
 
 
     public void getCarByMake(String aMake) {
-        for (Car car : CarCatalog) {
+        for (Car car : CarCatalog) { // Selataan läpi jokainen merkki listassa, palautetaan ensimmäinen.
             String make = car.getMake();
             System.out.println(make.equals(aMake));
             if(make.equals(aMake)) {
@@ -61,7 +62,7 @@ public class Manager {
         scan.useLocale(Locale.US);
         System.out.print("-Valitse paivitettava tieto-\n");
 
-        while(true) {
+        while(true) { // Muokataan olion tietoja olion omilla metodeilla.
             System.out.println("1 - Merkki\n2 - Malli\n3 - Moottorin tilavuus\n4 - Valmistusvuosi");
             userInput = scan.nextInt();
             scan.nextLine();
@@ -110,17 +111,16 @@ public class Manager {
             else {
                 System.out.println("Invalid input");
                 continue;
-                //vaara inpput
             }
         }
     }
 
     public Car findCarByMake(String aMake) {
-        if (CarCatalog.size() == 0) {
+        if (CarCatalog.size() == 0) { // Tarkistetaan onko lista tyhjä
             System.out.println("Ei autoja listassa");
             return null;
         }
-        for (Car car : CarCatalog) {
+        for (Car car : CarCatalog) { // Palautetaan ensimmäinen löydös
             if (aMake.equals(car.getMake())) {
                 return car;
             }

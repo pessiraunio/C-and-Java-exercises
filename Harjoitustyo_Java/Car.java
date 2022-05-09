@@ -1,6 +1,7 @@
 
 public class Car {
 
+    //Olion tietojäsenet
     private String mMake;
     private String mModel;
     private double mEngineDisplacement;
@@ -9,7 +10,7 @@ public class Car {
     public Car() {
         
     }
-
+    // Parametrinen rakentaja
     public Car(String aMake, String aModel, double aEngineDisplacement, int aManufactureYear) {
         mMake = aMake;
         mModel = aModel;
